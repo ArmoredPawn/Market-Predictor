@@ -2,7 +2,7 @@
 
 **Honest, math-powered tools for US stocks, explained in plain English.**
 
-**Live site: [market-predictor1734.streamlit.app](https://market-predictor1734.streamlit.app/)**
+**Live site: [marketpredictor1734.streamlit.app](https://marketpredictor1734.streamlit.app/)**
 
 Market Predictor is a free website with three tools that answer real questions people have about
 investing, using real math, from Nobel Prize-winning portfolio theory to machine learning. Every model is

@@ -21,4 +21,4 @@ jobs:
           python-version: "3.11"
       - run: pip install playwright==1.56.0
       - run: python -m playwright install --with-deps chromium
-      - run: python scripts/keep_awake.py https://market-predictor1734.streamlit.app/
+      - run: python scripts/keep_awake.py https://marketpredictor1734.streamlit.app/

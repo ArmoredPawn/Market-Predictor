@@ -6,7 +6,7 @@ hours. If the app is already asleep, it clicks Streamlit's "wake up" button and
 waits until the home page has really loaded. It exits with an error if the site
 doesn't come up, so GitHub emails the repo owner.
 
-Usage:  python scripts/keep_awake.py https://market-predictor1734.streamlit.app/
+Usage:  python scripts/keep_awake.py https://marketpredictor1734.streamlit.app/
 Needs:  pip install playwright && python -m playwright install chromium
 """
 
@@ -55,5 +55,5 @@ def visit(url: str) -> bool:
 
 
 if __name__ == "__main__":
-    target = sys.argv[1] if len(sys.argv) > 1 else "https://market-predictor1734.streamlit.app/"
+    target = sys.argv[1] if len(sys.argv) > 1 else "https://marketpredictor1734.streamlit.app/"
     sys.exit(0 if visit(target) else 1)
