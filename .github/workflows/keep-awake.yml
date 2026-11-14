@@ -1,0 +1,23 @@
+name: keep website awake
+
+# Streamlit Community Cloud puts apps to sleep after 12 hours without visitors.
+# This visits the site in a real browser every 4 hours (and wakes it if needed),
+# so it always loads instantly. If the site fails to load, the run fails and
+# GitHub emails the repository owner.
+on:
+  schedule:
+    - cron: "23 */4 * * *"
+  workflow_dispatch:
+
+jobs:
+  visit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install playwright==1.56.0
+      - run: python -m playwright install --with-deps chromium
+      - run: python scripts/keep_awake.py https://market-predictor1734.streamlit.app/
