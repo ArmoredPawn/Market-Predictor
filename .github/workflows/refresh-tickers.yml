@@ -1,0 +1,29 @@
+name: refresh ticker list
+
+# Every Monday, rebuild data/us_tickers.csv so new IPOs and delistings are picked up.
+on:
+  schedule:
+    - cron: "0 12 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install pandas
+      - run: python scripts/build_ticker_list.py
+      - name: Commit if changed
+        run: |
+          if git diff --quiet data/; then echo "No changes"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git commit -m "Refresh US ticker list"
+          git push
