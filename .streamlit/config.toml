@@ -1,26 +1,30 @@
+# Theme matches armoredpawn.github.io/About: always-dark deep navy,
+# indigo and pink accents, Inter font, soft rounded cards.
 [theme]
-font = "sans-serif"
-baseRadius = "medium"
+base = "dark"
+primaryColor = "#8f95ff"
+backgroundColor = "#07090f"
+secondaryBackgroundColor = "#10141f"
+textColor = "#eceef5"
+borderColor = "#1f2535"
+dataframeBorderColor = "#1f2535"
+dataframeHeaderBackgroundColor = "#151a28"
+linkColor = "#8f95ff"
+codeBackgroundColor = "#151a28"
+font = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+headingFont = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+headingFontWeights = [700, 700, 700, 600, 600, 600]
+baseRadius = "large"
+buttonRadius = "medium"
 showWidgetBorder = true
 paddingTop = "2.5rem"
-
-[theme.light]
-primaryColor = "#2a78d6"
-backgroundColor = "#fcfcfb"
-secondaryBackgroundColor = "#f3f2ee"
-textColor = "#0b0b0b"
-borderColor = "#e1e0d9"
-linkColor = "#1c5cab"
-chartCategoricalColors = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#6250d6", "#e34948"]
-
-[theme.dark]
-primaryColor = "#3987e5"
-backgroundColor = "#141413"
-secondaryBackgroundColor = "#1f1f1d"
-textColor = "#f0efec"
-borderColor = "#2c2c2a"
-linkColor = "#86b6ef"
-chartCategoricalColors = ["#3987e5", "#d95926", "#199e70", "#c98500", "#d55181", "#0ca30c", "#9085e9", "#e66767"]
+chartCategoricalColors = ["#6f75ee", "#d9579a", "#c98500", "#199e70", "#3987e5", "#0ca30c", "#a066d6", "#e66767"]
+blueColor = "#8f95ff"
+violetColor = "#a78bfa"
+greenColor = "#34d399"
+redColor = "#fb7185"
+orangeColor = "#fb923c"
+yellowColor = "#fbbf24"
 
 [client]
 toolbarMode = "viewer"

@@ -39,7 +39,7 @@ ui.page_header(":material/pie_chart:", "Portfolio Builder",
                "How should you split your money between several stocks? We use Nobel Prize-winning portfolio "
                "math to find mixes that balance growth against risk, then test them honestly on the past.")
 
-with st.container(border=True):
+with ui.card("inputs"):
     symbols = ui.ticker_multiselect("Your stocks (pick 2 to 15)", key="pf_tickers", defaults=DEFAULTS)
     c1, c2, c3 = st.columns([1.1, 2.6, 1.3])
     with c1:
@@ -161,7 +161,7 @@ ui.see_numbers(shares.sort_values("Share of money", ascending=False), key="pf_sh
 
 # ------------------------------------------------------------------ frontier
 ui.section("The efficient frontier: every possible mix",
-           "Each gray dot is a random mix of your stocks. The blue curve is the best possible return for each "
+           "Each gray dot is a random mix of your stocks. The purple curve is the best possible return for each "
            "level of risk; nothing above it is possible. Up and to the left is better.")
 frontier = pf.efficient_frontier(est, cap)
 cloud = pf.random_portfolios(est, 2500)

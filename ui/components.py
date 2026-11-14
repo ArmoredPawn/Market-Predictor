@@ -166,9 +166,20 @@ def headline(text: str):
 
 
 def section(title: str, subtitle: str | None = None):
-    st.markdown(f"### {title}")
+    """Section heading with the site's indigo-to-pink accent bar."""
+    st.markdown(f"<h3 class='mp-h'>{title}</h3>", unsafe_allow_html=True)
     if subtitle:
         st.caption(subtitle)
+
+
+def card(key: str, **kwargs):
+    """A bordered box styled like the cards on armoredpawn.github.io (gradient, shadow, hover)."""
+    return st.container(border=True, key=f"card-{key}", **kwargs)
+
+
+def tag(text: str):
+    """Small uppercase accent label above a card title."""
+    st.markdown(f"<span class='mp-tag'>{text}</span>", unsafe_allow_html=True)
 
 
 def see_numbers(df: pd.DataFrame, key: str, column_config: dict | None = None, label: str = "See the numbers"):
@@ -195,19 +206,104 @@ def disclaimer():
     )
 
 
+# Styling that mirrors armoredpawn.github.io/About (deep navy, indigo + pink accents, Inter,
+# gradient cards with soft shadows). Colors and fonts themselves live in .streamlit/config.toml.
 CSS = """
 <style>
-.mp-intro { font-size: 1.15rem; opacity: 0.8; margin-top: -0.6rem; max-width: 52rem; }
-.mp-headline {
-  font-size: 1.3rem; line-height: 1.55; padding: 1.1rem 1.3rem; border-radius: 0.75rem;
-  border: 1px solid rgba(128,128,128,0.25); background: rgba(42,120,214,0.07); margin: 0.4rem 0 1.2rem 0;
+:root {
+  --mp-bg: #07090f;
+  --mp-surface: #10141f;
+  --mp-surface-top: #151a28;
+  --mp-ink: #eceef5;
+  --mp-ink-soft: #98a1b5;
+  --mp-line: #1f2535;
+  --mp-accent: #8f95ff;
+  --mp-accent-2: #f472b6;
+  --mp-shadow: 0 1px 2px rgb(0 0 0 / 0.5), 0 12px 32px rgb(0 0 0 / 0.45);
 }
-.mp-headline b { font-weight: 700; }
+
+/* A soft wash of the two accents at the top of every page */
+[data-testid="stApp"] {
+  background:
+    radial-gradient(56rem 30rem at 10% -8rem, color-mix(in srgb, var(--mp-accent) 22%, transparent), transparent 70%) no-repeat,
+    radial-gradient(40rem 26rem at 95% -6rem, color-mix(in srgb, var(--mp-accent-2) 15%, transparent), transparent 70%) no-repeat,
+    var(--mp-bg);
+}
+
+/* Frosted top navigation bar */
+[data-testid="stHeader"] {
+  background: color-mix(in srgb, var(--mp-bg) 85%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--mp-line);
+}
+[data-testid="stTopNavLink"] { font-weight: 600; }
+
+h1, h2, h3 { letter-spacing: -0.02em; }
+
+/* Cards: gradient surface, soft shadow, accent border on hover */
+[class*="st-key-card-"], [data-testid="stMetric"] {
+  background: linear-gradient(180deg, var(--mp-surface-top), var(--mp-surface));
+  box-shadow: var(--mp-shadow);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+[class*="st-key-card-"]:hover { border-color: color-mix(in srgb, var(--mp-accent) 35%, var(--mp-line)) !important; }
+[class*="st-key-card-tool"]:hover { transform: translateY(-2px); border-color: var(--mp-accent) !important; }
+[data-testid="stMetric"] { border-radius: 16px; }
+
+/* Primary buttons wear the indigo-to-pink gradient, like the avatar ring */
+[data-testid="stBaseButton-primary"] {
+  background: linear-gradient(135deg, var(--mp-accent), var(--mp-accent-2));
+  border: none;
+  color: #07090f;
+  font-weight: 600;
+}
+[data-testid="stBaseButton-primary"]:hover { filter: brightness(1.08); color: #07090f; }
+[data-testid="stBaseButton-primary"] p { color: #07090f; font-weight: 600; }
+
+/* Section headings with the gradient accent bar */
+.mp-h {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 1.4rem !important; font-weight: 700; letter-spacing: -0.01em;
+  margin: 1.6rem 0 0.2rem 0 !important; padding: 0 !important;
+}
+.mp-h::before {
+  content: ""; flex: none; width: 4px; height: 1.1em; border-radius: 2px;
+  background: linear-gradient(var(--mp-accent), var(--mp-accent-2));
+}
+
+.mp-tag {
+  color: var(--mp-accent); font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 0.04em; text-transform: uppercase;
+}
+
+.mp-intro { font-size: 1.1rem; color: var(--mp-ink-soft); margin-top: -0.6rem; max-width: 60ch; }
+
+/* The plain-English answer: a card with a glowing accent edge */
+.mp-headline {
+  position: relative;
+  font-size: 1.25rem; line-height: 1.6; padding: 1.2rem 1.4rem 1.2rem 1.6rem;
+  border-radius: 16px; margin: 0.4rem 0 1.2rem 0;
+  background: linear-gradient(180deg, var(--mp-surface-top), var(--mp-surface));
+  border: 1px solid color-mix(in srgb, var(--mp-accent) 35%, var(--mp-line));
+  box-shadow: var(--mp-shadow);
+  overflow: hidden;
+}
+.mp-headline::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+  background: linear-gradient(var(--mp-accent), var(--mp-accent-2));
+}
+.mp-headline b { font-weight: 700; color: #ffffff; }
+
 .mp-hero { padding: 0 0 0.4rem 0; margin-top: -1.5rem; }
-.mp-hero h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.1; margin-bottom: 0.4rem; }
-.mp-hero p { font-size: clamp(1.05rem, 2.2vw, 1.3rem); opacity: 0.8; max-width: 46rem; }
-.mp-card-q { font-size: 1.05rem; font-style: italic; opacity: 0.85; min-height: 3.3rem; margin-bottom: 0.4rem; }
-.mp-big { font-size: 2.6rem; font-weight: 700; line-height: 1.1; }
-.mp-muted { opacity: 0.7; }
+.mp-hero h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.1; margin-bottom: 0.4rem; letter-spacing: -0.02em; }
+.mp-hero h1 .mp-grad {
+  background: linear-gradient(90deg, var(--mp-accent), var(--mp-accent-2));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.mp-hero p { font-size: clamp(1.05rem, 2.2vw, 1.2rem); color: var(--mp-ink-soft); max-width: 60ch; }
+.mp-card-q { font-size: 1rem; color: var(--mp-ink-soft); min-height: 3.2rem; margin-bottom: 0.4rem; }
+.mp-big { font-size: 2.6rem; font-weight: 700; line-height: 1.1; color: var(--mp-accent); }
+.mp-muted { color: var(--mp-ink-soft); }
 </style>
 """

@@ -91,7 +91,7 @@ ui.page_header(":material/model_training:", "Prediction Lab",
                "Can machine learning predict a stock? We train real models, test them honestly on years of data "
                "they've never seen, and tell you plainly whether they work.")
 
-with st.container(border=True):
+with ui.card("inputs"):
     c1, c2 = st.columns([2.2, 1.4], vertical_alignment="bottom")
     with c1:
         symbol = ui.ticker_select("Stock or ETF", key="pr_ticker", default=ui.default_ticker("AAPL"))
@@ -191,8 +191,8 @@ We correct for that, so a lucky winner can't fool you.
         ui.section("Every method, ranked",
                    "Each dot is one method's share of correct predictions. Dots right of the dotted line beat "
                    "always guessing the usual direction. The gray zone is where a method with no skill at all "
-                   "lands 95% of the time, so dots inside it prove nothing. Blue = learning algorithm, gray = simple "
-                   "rule, orange = best learning algorithm.")
+                   "lands 95% of the time, so dots inside it prove nothing. Purple = learning algorithm, gray = simple "
+                   "rule, pink = best learning algorithm.")
         charts.show(charts.model_ranking(lb, bench.naive_accuracy, band, highlight=best_key), key="pr_rank")
 
         # ---------------------------------------------------------- families
@@ -375,7 +375,7 @@ This takes about 10–30 seconds the first time.
         # ---------------------------------------------------------- forecast + record
         left, right = st.columns([1, 1.4], gap="large")
         with left:
-            with st.container(border=True):
+            with ui.card("lean"):
                 st.markdown(f"**The model's current lean** · based on prices up to {forecast.as_of:%b %d, %Y}")
                 prob = forecast.prob_up
                 lean = "higher" if prob >= 0.5 else "lower"

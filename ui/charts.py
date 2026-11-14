@@ -41,17 +41,20 @@ LIGHT = Palette(
     good="#0ca30c",
     critical="#d03b3b",
 )
+# Matches the site theme (armoredpawn.github.io): deep navy with indigo and pink leading.
+# Validated with the dataviz palette checker on #07090f and #10141f: lightness band, chroma,
+# colorblind separation (adjacent pairs; first three slots all-pairs) and 3:1 contrast all pass.
 DARK = Palette(
-    series=("#3987e5", "#d95926", "#199e70", "#c98500", "#d55181", "#0ca30c", "#9085e9", "#e66767"),
-    ink="#f0efec",
-    ink2="#c3c2b7",
-    muted="#898781",
-    grid="#2c2c2a",
-    axis="#383835",
-    surface="#1a1a19",
-    neutral="#383835",
+    series=("#6f75ee", "#d9579a", "#c98500", "#199e70", "#3987e5", "#0ca30c", "#a066d6", "#e66767"),
+    ink="#eceef5",
+    ink2="#98a1b5",
+    muted="#6b7488",
+    grid="#1a2030",
+    axis="#2a3142",
+    surface="#07090f",
+    neutral="#2a3042",
     good="#0ca30c",
-    critical="#d03b3b",
+    critical="#e66767",
 )
 BLUE_RAMP = ("#cde2fb", "#9ec5f4", "#6da7ec", "#3987e5", "#256abf", "#184f95", "#0d366b")
 FONT = '"Source Sans 3", "Source Sans Pro", system-ui, -apple-system, "Segoe UI", sans-serif'
@@ -59,10 +62,11 @@ PLOTLY_CONFIG = {"displayModeBar": False, "responsive": True}
 
 
 def palette() -> Palette:
-    try:
-        return DARK if st.context.theme.type == "dark" else LIGHT
-    except Exception:
-        return LIGHT
+    """The site is always dark (like armoredpawn.github.io), so charts always use the dark palette.
+
+    LIGHT is kept for reference in case a light theme is ever added back.
+    """
+    return DARK
 
 
 def rgba(hex_color: str, alpha: float) -> str:
@@ -335,7 +339,7 @@ def frontier_chart(cloud: pd.DataFrame, frontier: pd.DataFrame, stocks: pd.DataF
 
 def correlation_heatmap(corr: pd.DataFrame) -> go.Figure:
     p = palette()
-    neg, pos = p.series[7], p.series[0]  # red <-> blue, gray midpoint
+    neg, pos = p.series[1], p.series[0]  # pink (warm) <-> indigo (cool), neutral midpoint
     scale = [[0.0, neg], [0.5, p.neutral], [1.0, pos]]
     show_text = len(corr) <= 10
     fig = go.Figure(go.Heatmap(

@@ -30,7 +30,7 @@ ui.page_header(":material/stacked_line_chart:", "Future Simulator",
                "What could an investment be worth in the future? We simulate thousands of possible futures "
                "based on how the stock has really behaved, so you can see the good, the typical and the bad.")
 
-with st.container(border=True):
+with ui.card("inputs"):
     c1, c2, c3, c4 = st.columns([2.4, 1.2, 1.2, 1.4])
     with c1:
         symbol = ui.ticker_select("Stock or ETF", key="mc_ticker", default=ui.default_ticker("SPY"))
