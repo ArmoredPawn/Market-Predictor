@@ -68,21 +68,6 @@ for i, (col, tool) in enumerate(zip(cols, TOOLS)):
             st.switch_page(tool["page"], query_params=params)
         st.markdown("\n".join(f"- {p}" for p in tool["points"]))
 
-st.markdown("## Why trust this site?")
-a, b, c = st.columns(3, gap="large")
-with a:
-    st.markdown("#### :material/fact_check: Tested honestly")
-    st.markdown("Every model is tested on years of data it never saw, and compared with the simplest possible "
-                "strategy. If it can't beat that, we say so, in big letters.")
-with b:
-    st.markdown("#### :material/translate: Plain English first")
-    st.markdown("Every result starts with a one-sentence answer. Charts show ranges, not false certainty. "
-                "The math is there too, one click away, if you want it.")
-with c:
-    st.markdown("#### :material/flag: US stocks only")
-    st.markdown("About 3,900 US-based companies and popular US stock ETFs, sorted biggest first. "
-                "Foreign companies are filtered out, even ones that trade in New York.")
-
 st.markdown("## The one thing to remember")
 st.info(
     "**Nobody can reliably predict next week's stock price, including us.** What math *can* do is show you "
