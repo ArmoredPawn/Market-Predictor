@@ -11,7 +11,8 @@ on:
 
 jobs:
   visit:
-    runs-on: ubuntu-latest
+    # Pinned: Playwright's browsers don't support Ubuntu 26.04 (the new ubuntu-latest) yet.
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
