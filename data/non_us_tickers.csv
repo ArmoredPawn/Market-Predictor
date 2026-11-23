@@ -73,6 +73,7 @@ ALVO,Alvotech,Luxembourg
 ALVOW,Alvotech Warrant,Luxembourg
 AMAC,AMR Resources Acquisition Corp,Cayman Islands
 AMACU,AMR Resources Acquisition Corp Units,Cayman Islands
+AMACW,AMR Resources Acquisition Corp Warrants,Cayman Islands
 AMBO,Ambow Education Holding Ltd.,China
 AMBR,Amber International Holding Limited,Hong Kong
 AMCR,Amcor plc,United Kingdom
@@ -277,6 +278,7 @@ CHA,Chagee Holdings Limited,China
 CHAI,Core AI Holdings Inc.,Canada
 CHEC,Chenghe Acquisition III Co.,Singapore
 CHECU,Chenghe Acquisition III Co. Units,Singapore
+CHECW,Chenghe Acquisition III Co. Warrants,Singapore
 CHKP,Check Point Software Technologies Ltd.,Israel
 CHNR,China Natural Resources Inc.,Hong Kong
 CHR,Cheer Holding Inc.,China
@@ -595,6 +597,7 @@ GVH,Globavend Holdings Limited,Australia
 HAO,Haoxi Health Technology Limited,China
 HAVA,Harvard Ave Acquisition Corporation,South Korea
 HAVAR,Harvard Ave Acquisition Corporation Rights that convert on a 1/10th of 1 basis to,South Korea
+HAVAU,Harvard Ave Acquisition Corporation Unit,South Korea
 HBM,Hudbay Minerals Inc.,Canada
 HBNB,Hotel101 Global Holdings Corp.,Singapore
 HCAC,Hall Chadwick Acquisition Corp,Cayman Islands
@@ -750,6 +753,7 @@ KZIA,Kazia Therapeutics Limited,Australia
 LAC,Lithium Americas Corp.,Canada
 LAES,SEALSQ Corp,Switzerland
 LAFA,LaFayette Acquisition Corp.,France
+LAFAR,LaFayette Acquisition Corp. Rights,France
 LAFAU,LaFayette Acquisition Corp. Unit,France
 LANV,Lanvin Group Holdings Limited,Cayman Islands
 LAR,Lithium Argentina AG,Canada
@@ -793,7 +797,6 @@ LUD,Luda Technology Group Limited,Hong Kong
 LULU,lululemon athletica inc.,Canada
 LX,LexinFintech Holdings Ltd.,China
 LXEH,Lixiang Education Holding Co. Ltd.,China
-LXFR,Luxfer Holdings PLC,United Kingdom
 LYB,LyondellBasell Industries NV,Netherlands
 LYG,Lloyds Banking Group Plc,United Kingdom
 LZM,Lifezone Metals Limited,Isle of Man
@@ -816,7 +819,6 @@ MEGL,Magic Empire Global Limited,Hong Kong
 MELI,MercadoLibre Inc.,Argentina
 MENS,Jyong Biotech Ltd.,Taiwan
 MEOH,Methanex Corporation,Canada
-MERC,Mercer International Inc.,Canada
 MESO,Mesoblast Limited,Australia
 MF,MindForge Inc.,China
 MFC,Manulife Financial Corporation,Canada
@@ -834,6 +836,7 @@ MKDWW,MKDWELL Tech Inc. Warrants,Taiwan
 MLCO,Melco Resorts & Entertainment Limited,Hong Kong
 MMTX,Miluna Acquisition Corp,Taiwan
 MMTXU,Miluna Acquisition Corp Units,Taiwan
+MMTXW,Miluna Acquisition Corp Warrant,Taiwan
 MMYT,MakeMyTrip Limited,India
 MNDO,MIND C.T.I. Ltd.,Israel
 MNDR,Mobile-health Network Solutions,Singapore
@@ -879,6 +882,7 @@ NBP,NovaBridge Biosciences,China
 NBR,Nabors Industries Ltd.,Bermuda
 NBRG,Newbridge Acquisition Limited,Hong Kong
 NBRGR,Newbridge Acquisition Limited Rights,Hong Kong
+NBRGU,Newbridge Acquisition Limited Unit,Hong Kong
 NBTX,Nanobiotix S.A.,France
 NCEL,NewcelX Ltd.,Switzerland
 NCEW,New Century Logistics (BVI) Limited,Hong Kong
@@ -947,6 +951,7 @@ NXTT,Next Technology Holding Inc.,China
 NYAX,Nayax Ltd.,Israel
 NYXH,Nyxoah SA,Belgium
 OBA,Oxley Bridge Acquisition Limited,Hong Kong
+OBAWU,Oxley Bridge Acquisition Limited Unit,Hong Kong
 OBAWW,Oxley Bridge Acquisition Limited Warrants,Hong Kong
 OBE,Obsidian Energy Ltd.,Canada
 OCG,Oriental Culture Holding LTD,China
@@ -971,6 +976,7 @@ ONCY,Oncolytics Biotech Inc.,Canada
 ONEG,OneConstruction Group Limited,Hong Kong
 ONMD,OneMedNet Corp,United Kingdom
 ONMDW,OneMedNet Corp Warrant,United Kingdom
+OPHI,CollPlant Biotechnologies Ltd,Israel
 OPRA,Opera Limited,Norway
 OPTH,Optimi Health Corp.,Canada
 OR,OR Royalties Inc.,Canada
@@ -1330,7 +1336,6 @@ UZX,Linkage Global Inc.,Japan
 VAI,Valor Energy Incorporated,China
 VALE,VALE S.A.,Brazil
 VALN,Valneva SE,France
-VBNK,VersaBank,Canada
 VCIG,VCI Global Limited,Malaysia
 VCRE,Vicore Pharma Holding AB,Sweden
 VEON,VEON Ltd.,Netherlands
@@ -1353,6 +1358,7 @@ VNTG,Vantage Corp,Singapore
 VOD,Vodafone Group Plc,United Kingdom
 VOXR,Vox Royalty Corp.,Canada
 VRAX,Virax Biolabs Group Limited,United Kingdom
+VRSA,Versa Bancorp,Canada
 VRXA,Veraxa Biotech AG,Switzerland
 VRXAW,Veraxa Biotech AG Warrants,Switzerland
 VS,Versus Systems Inc.,Canada
@@ -1380,6 +1386,7 @@ WIX,Wix.com Ltd.,Israel
 WKSP,Worksport Ltd.,Canada
 WLCO,Wilco 63 Corporation,Cayman Islands
 WLCOU,Wilco 63 Corporation Units,Cayman Islands
+WLCOW,Wilco 63 Corporation Warrant,Cayman Islands
 WLDS,Wearable Devices Ltd.,Israel
 WLDSW,Wearable Devices Ltd. Warrant,Israel
 WNW,Meiwu Technology Company Limited,China
@@ -1400,6 +1407,7 @@ WTGUR,Wintergreen Acquisition Corp. Rights,China
 WTGUU,Wintergreen Acquisition Corp. Unit,China
 WTW,Willis Towers Watson Public Limited Company,United Kingdom
 WVE,Wave Life Sciences Inc.,Singapore
+WWB,Windward Bio Group AG,Switzerland
 WXM,WF International Limited,China
 WYHG,Wing Yip Food Holdings Group Limited,China
 XCH,XCHG Limited,Germany
